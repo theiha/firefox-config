@@ -21,6 +21,6 @@ This theme requires the [Sidebery extension](https://addons.mozilla.org/firefox/
 
 2. **Configure Sidebery**  
    - Go to Sidebery's settings.
-   - In the styles editor, add the contents of `sidebery.css` (found in this repository) to the CSS option.
+   - In the styles editor, add the contents of `sideberry.css` to the CSS option.
 
 **DONE**
