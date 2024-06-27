@@ -4,14 +4,14 @@
 Make sure to have [Firefox](https://www.mozilla.org/firefox/new/) installed.
 
 ### 2. Access Firefox Profiles
-Open Firefox and navigate to `about:profiles`.
+- Open Firefox and navigate to `about:profiles`
+    - Find and open the root directory of your profile
+- Open Firefox and navigate to `about:config`
+- Set `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`
 
-### 3. Locate Profile Directory
-Find and open the root directory of your profile.
-
-### 4. Add Custom Files
+### 3. Add Custom Files
 - Choose either `userChrome_v1` or `userChrome_v2` in the `chrome` folder (the v2 enables a smooth animation for the auto-hidden sidebar).
-- Rename the file you chose to `userChrome_v1`.
+- Rename the file you chose to `userChrome.css`.
 - Add the `chrome` folder to the `.default-release` folder in the root directory.
 
 
