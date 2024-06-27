@@ -1,10 +1,5 @@
 # Preview
-<div style="text-align: center;">
-   <video controls>
-       <source src="res/preview.mp4" type="video/mp4">
-       Your browser does not support the video tag.
-   </video>
-</div>
+https://github.com/theiha/firefox-config/assets/152792316/5303c21e-a419-424d-8965-5ca08a91ec99
 
 ## Installation Guide
 
