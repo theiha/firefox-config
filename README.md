@@ -26,6 +26,20 @@ Make sure to have [Firefox](https://www.mozilla.org/firefox/new/) installed.
 
 ## FAQ
 
+### Firefox does not look like it does in the video
+
+Unfortunately Firefox made some adjustments, which in turn broke this theme. While I am trying to fix this you can use userChrome_v3, which should provide a usable experience.
+
+### How do the different css files differ?
+
+- userChrome_v1
+    - nav bar does not auto hide
+- userChrome_v2
+    - nav bar does auto hide
+- userChrome_v3
+    - url bar and is always present
+    - forward and backward arrows are always present
+
 ### I want to move the sidebar to the right
 Steps: 
 1. Change this:
