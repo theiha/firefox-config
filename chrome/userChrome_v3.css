@@ -1,0 +1,112 @@
+/* Define global variables */
+:root {
+    --background-color: #2b2a33;
+    --sidebar-hover-width: 30px;
+    --sidebar-visible-width: 200px;
+    --nav-bar-height: 20px;
+    --sidebar-transition-duration: 200ms;
+}
+
+/* Useful Firefox sites: about:config, about:support
+-> toolkit.legacyUserProfileCustomizations.stylesheets
+*/
+
+/* Style for browser content */
+#appcontent {
+    >#tabbrowser-tabbox>#tabbrowser-tabpanels>.deck-selected>.browserContainer>.browserStack>browser {
+        border-radius: 10px !important;
+        margin: 10px !important;
+        overflow: hidden;
+        /* Ensure content respects border-radius */
+    }
+
+    /* Sharp edges when fullscreen is active */
+    >#tabbrowser-tabbox>#tabbrowser-tabpanels>.deck-selected>.browserContainer>.browserStack>browser:fullscreen {
+        border-radius: 0 !important;
+    }
+}
+
+/* Style for browser stack and container */
+.browserStack {
+    background: #3b3f52;
+}
+
+.browserContainer {
+    background-color: var(--lwt-accent-color-inactive, var(--lwt-accent-color)) !important;
+    background-image: var(--lwt-header-image), var(--lwt-additional-images) !important;
+    background-repeat: no-repeat, var(--lwt-background-tiling) !important;
+    background-position: right top, var(--lwt-background-alignment) !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    /* Ensure container also respects border-radius */
+}
+
+/* Hide various UI elements */
+#titlebar,
+.titlebar-buttonbox-container,
+#forward-button,
+#back-button,
+#reload-button {
+    display: none !important;
+}
+
+#sidebar-button {
+    margin-left: 10px !important;
+}
+
+/* Hide the tab bar */
+#TabsToolbar {
+    display: none !important;
+}
+
+/* Re-add back and forward buttons */
+#forward-button,
+#back-button {
+    display: inline !important;
+}
+
+/* Style for navigation bar and URL bar */
+#nav-bar {
+    background-color: #3b3f52 !important;
+}
+
+#urlbar-background {
+    background-color: #323446 !important;
+    border-radius: 4px !important;
+    /* Ensure URL bar background has rounded corners */
+}
+
+toolbarbutton[open="true"] {
+    --is-bar-visible: visible !important;
+}
+
+/* Hide sidebar header */
+#sidebar-header {
+    display: none;
+    color: var(--background-color);
+}
+
+/* This defines the sidebar */
+#sidebar-box {
+    position: relative !important;
+    min-width: var(--sidebar-hover-width) !important;
+    max-width: var(--sidebar-hover-width) !important;
+    z-index: 1;
+    height: 100vh !important;
+    overflow: hidden;
+    border-right: none !important;
+    transition: all var(--sidebar-transition-duration) ease-in-out !important;
+}
+
+/* Expand sidebar on hover */
+#sidebar-box:hover {
+    min-width: var(--sidebar-visible-width) !important;
+    max-width: var(--sidebar-visible-width) !important;
+}
+
+/* Style for sidebar splitter */
+#sidebar-splitter {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
