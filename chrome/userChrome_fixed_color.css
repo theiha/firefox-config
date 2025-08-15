@@ -92,8 +92,9 @@
     box-shadow: none !important;
 }
 
-/* --- [7] VIDEO FULLSCREEN FIX (Definitive Version) --- */
-.browserContainer:has(browser[moz-content-is-fullscreen="true"]) {
+/* Remove rounded corners when video/content is in fullscreen */
+#tabbrowser-tabpanels .browserContainer:has(browser:-moz-full-screen),
+#tabbrowser-tabpanels>.deck-selected>.browserContainer:has(browser:-moz-full-screen) {
     border-radius: 0 !important;
     margin: 0 !important;
 }
