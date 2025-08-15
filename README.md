@@ -51,6 +51,11 @@ Unfortunately Firefox made some adjustments, which in turn broke this theme. Whi
   - sidebar now includes recently closed tab, bookmarks and the tab history again
 - userChrome_fixed
   - the browser content box has rounded corners again
+- userChrome_fixed_color
+  - grey colored UI elements (background, url/nav-bar, sidebar)
+    - sidebar needs changes in `sideberry.css` -> `--frame-bg: <your_color_here> !important; /* this is the sidebar background color */`
+  - auto hiding top bar
+    - does not auto show, needs to be opened with a shortcut
 
 ### I want to move the sidebar to the right
 

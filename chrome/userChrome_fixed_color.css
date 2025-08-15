@@ -1,0 +1,99 @@
+/* --- GLOBAL VARIABLES --- */
+:root {
+    --background-color: #2b2a33;
+    --new-bg-color: #2b2b2b;
+    --navbar-color: #3b3f52;
+    --navbar-height: 42px;
+    --sidebar-collapsed-width: 35px;
+    --sidebar-expanded-width: 200px;
+    --sidebar-transition-duration: 200ms;
+}
+
+/* --- AUTOHIDE NAVIGATION BAR --- */
+#navigator-toolbox {
+    position: relative !important;
+    /* Keep it in the document flow */
+    z-index: 10;
+    /* move the sidebar off-screen */
+    margin-top: calc(-1 * (var(--navbar-height))) !important;
+    transition: margin-top 150ms ease-out !important;
+}
+
+/* Reveal the full bar upon hover or focus */
+#navigator-toolbox:hover,
+#navigator-toolbox:focus-within {
+    margin-top: 0 !important;
+}
+
+/* round corners of the main browser content */
+#tabbrowser-tabpanels .browserContainer,
+#tabbrowser-tabpanels>.deck-selected>.browserContainer {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    margin: 10px 10px 10px 10px !important;
+}
+
+/* Style for the main content area of the browser */
+#appcontent,
+#tabbrowser-tabpanels {
+    background: var(--new-bg-color) !important;
+}
+
+/* Hide various UI elements for a cleaner look */
+#titlebar,
+.titlebar-buttonbox-container,
+#TabsToolbar,
+#reload-button {
+    display: none !important;
+}
+
+#sidebar-button {
+    margin-left: 10px !important;
+}
+
+/* NAV AND URL BAR STYLES */
+#nav-bar {
+    background-color: var(--new-bg-color) !important;
+    box-shadow: none !important;
+    border: none !important;
+    min-height: var(--navbar-height) !important;
+}
+
+#urlbar-background {
+    background-color: var(--new-bg-color) !important;
+    border-radius: 4px !important;
+    border: none !important;
+}
+
+/* --- SIDEBAR CUSTOMIZATION --- */
+#sidebar-header {
+    display: none;
+}
+
+#sidebar-box {
+    position: relative !important;
+    min-width: var(--sidebar-collapsed-width) !important;
+    max-width: var(--sidebar-collapsed-width) !important;
+    z-index: 1;
+    overflow: hidden;
+    border-right: none !important;
+    transition: all var(--sidebar-transition-duration) ease-in-out !important;
+}
+
+#sidebar-box:hover {
+    min-width: var(--sidebar-expanded-width) !important;
+    max-width: var(--sidebar-expanded-width) !important;
+}
+
+/* Style for sidebar splitter */
+#sidebar-splitter {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* --- [7] VIDEO FULLSCREEN FIX (Definitive Version) --- */
+.browserContainer:has(browser[moz-content-is-fullscreen="true"]) {
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
