@@ -32,13 +32,19 @@ Unfortunately Firefox made some adjustments, which in turn broke this theme. Whi
 
 ### How do the different css files differ?
 
-- userChrome_v1
+- userChrome_v1 (legacy)
     - nav bar does not auto hide
-- userChrome_v2
+- userChrome_v2 (legacy)
     - nav bar does auto hide
 - userChrome_v3
     - url bar and is always present
     - forward and backward arrows are always present
+    - sidebar does not include recently closed tab, bookmarks and the tab history
+    - the browser content box does not have rounded corners
+- userChrome_sidebar_fixed
+    - sidebar now includes recently closed tab, bookmarks and the tab history again
+- userChrome_fixed
+    - the browser content box has rounded corners again
 
 ### I want to move the sidebar to the right
 Steps: 

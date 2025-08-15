@@ -1,0 +1,84 @@
+/* Define global variables */
+:root {
+    --background-color: #2b2a33;
+    --sidebar-hover-width: 35px;
+    --sidebar-visible-width: 200px;
+    --nav-bar-height: 20px;
+    --sidebar-transition-duration: 200ms;
+}
+
+/* Useful Firefox sites: about:config, about:support
+-> toolkit.legacyUserProfileCustomizations.stylesheets
+*/
+
+/* Style for the main content area of the browser */
+#appcontent,
+#tabbrowser-tabpanels {
+    background: var(--background-color) !important;
+}
+
+/* Apply rounding and margin ONLY to the browser content container */
+#tabbrowser-tabpanels .browserContainer,
+#tabbrowser-tabpanels>.deck-selected>.browserContainer {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    margin: 10px 10px 10px 10px !important;
+}
+
+
+/* Hide various UI elements for a cleaner look */
+#titlebar,
+.titlebar-buttonbox-container,
+#TabsToolbar {
+    display: none !important;
+}
+
+#sidebar-button {
+    margin-left: 10px !important;
+}
+
+/* Style for navigation bar and URL bar */
+#nav-bar {
+    background-color: #3b3f52 !important;
+    box-shadow: none !important;
+    /* Remove any shadows */
+    border: none !important;
+    /* Remove any borders */
+    /* Removed padding-bottom to help reduce the top gap */
+}
+
+#urlbar-background {
+    background-color: #323446 !important;
+    border-radius: 4px !important;
+    border: none !important;
+    /* Ensure no extra border */
+}
+
+/* Hide sidebar header */
+#sidebar-header {
+    display: none;
+}
+
+/* This defines the sidebar */
+#sidebar-box {
+    position: relative !important;
+    min-width: var(--sidebar-hover-width) !important;
+    max-width: var(--sidebar-hover-width) !important;
+    z-index: 1;
+    overflow: hidden;
+    border-right: none !important;
+    transition: all var(--sidebar-transition-duration) ease-in-out !important;
+}
+
+/* Expand sidebar on hover */
+#sidebar-box:hover {
+    min-width: var(--sidebar-visible-width) !important;
+    max-width: var(--sidebar-visible-width) !important;
+}
+
+/* Style for sidebar splitter */
+#sidebar-splitter {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
