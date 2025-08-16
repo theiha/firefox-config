@@ -56,6 +56,8 @@ Unfortunately Firefox made some adjustments, which in turn broke this theme. Whi
     - sidebar needs changes in `sideberry.css` -> `--frame-bg: <your_color_here> !important; /* this is the sidebar background color */`
   - auto hiding top bar
     - does not auto show, needs to be opened with a shortcut
+- userChrome_fixed_color_hiding
+  - `userChrome_fixed_color`, but the sidebar is now fully hidden
 
 ### I want to move the sidebar to the right
 
