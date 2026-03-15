@@ -17,7 +17,7 @@ Make sure to have [Firefox](https://www.mozilla.org/firefox/new/) installed.
 
 ### 3. Add Custom Files
 
-- Choose either `userChrome_v1` or `userChrome_v2` in the `chrome` folder (the v2 enables a smooth animation for the auto-hidden sidebar).
+- Choose the latest `userChrome_*` file in the `chrome` folder.
 - Be sure to rename the file you chose to `userChrome.css`.
 - Add the `chrome` folder to the `.default-release` folder in the root directory.
 
@@ -29,6 +29,7 @@ Make sure to have [Firefox](https://www.mozilla.org/firefox/new/) installed.
 
 - Go to Sidebery's settings.
 - In the styles editor, add the contents of `sidebery.css` to the CSS option.
+- To configure the spaces/tab groups go to `navigation bar > Enabled elements` in the Sidebery settings.
 
 ## FAQ
 
@@ -81,3 +82,7 @@ Steps:
    <div style="text-align: center;">
        <img src="res/move_sidebery.png" alt="Move Sidebery Sidebar">
    </div>
+
+### There are issues with the sidebar
+
+If you have issues where the theme does not look like in the video (except the color), make sure to fully disable the built-in sidebar in Firefox.
