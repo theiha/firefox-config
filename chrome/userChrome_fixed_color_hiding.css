@@ -43,6 +43,7 @@
 #titlebar,
 .titlebar-buttonbox-container,
 #TabsToolbar,
+#PersonalToolbar,
 #reload-button {
     display: none !important;
 }
