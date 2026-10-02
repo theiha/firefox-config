@@ -1,68 +1,28 @@
-# Preview
+# Firefox + Sidebery
 
-https://github.com/theiha/firefox-config/assets/152792316/5303c21e-a419-424d-8965-5ca08a91ec99
+[Preview (Older colors)](https://github.com/theiha/firefox-config/assets/152792316/5303c21e-a419-424d-8965-5ca08a91ec99)
 
-## Installation Guide
+## Install
 
-### 1. Install Firefox
+1. In `about:profiles`, open the active profile's **Root Directory**.
+2. In `about:config`, enable `toolkit.legacyUserProfileCustomizations.stylesheets`.
+3. Copy `chrome/userChrome_fixed_color_hiding.css` to `<profile>/chrome/userChrome.css`.
+4. Install [Sidebery](https://addons.mozilla.org/firefox/addon/sidebery/).
+5. Paste `sideberry.css` into Sidebery's Styles editor. Set `--frame-bg` to `#2b2b2b`.
+6. Restart Firefox.
 
-Make sure to have [Firefox](https://www.mozilla.org/firefox/new/) installed.
+## Customize
 
-### 2. Access Firefox Profiles
+Edit the variables at the top of `userChrome.css`:
 
-- Open Firefox and navigate to `about:profiles`
-  - Find and open the root directory of your profile
-- Open Firefox and navigate to `about:config`
-  - Set `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`
+- `--background-color`: window and sidebar background
+- `--field-color`: search field background
+- `--text-color`: chrome text
+- `--navbar-height`: navigation height and hidden offset
+- `--sidebar-expanded-width`: sidebar width on hover
 
-### 3. Add Custom Files
-
-- Choose the latest `userChrome_*` file in the `chrome` folder.
-- Be sure to rename the file you chose to `userChrome.css`.
-- Add the `chrome` folder to the `.default-release` folder in the root directory.
-
-### 4. Install Sidebery
-
-- Make sure to have [Sidebery](https://addons.mozilla.org/firefox/addon/sidebery/) added as an extension for Firefox.
-
-### 5. Configure Sidebery
-
-- Go to Sidebery's settings.
-- In the styles editor, add the contents of `sidebery.css` to the CSS option.
-- To configure the spaces/tab groups go to `navigation bar > Enabled elements` in the Sidebery settings.
-
-## FAQ
-
-### Firefox does not look like it does in the video
-
-Unfortunately Firefox made some adjustments, which in turn broke this theme. While I am trying to fix this you can use userChrome_v3, which should provide a usable experience.
-
-### How do the different css files differ?
-
-- userChrome_v1 (legacy)
-  - nav bar does not auto hide
-- userChrome_v2 (legacy)
-  - nav bar does auto hide
-- userChrome_v3
-  - url bar and is always present
-  - forward and backward arrows are always present
-  - sidebar does not include recently closed tab, bookmarks and the tab history
-  - the browser content box does not have rounded corners
-- userChrome_sidebar_fixed
-  - sidebar now includes recently closed tab, bookmarks and the tab history again
-- userChrome_fixed
-  - the browser content box has rounded corners again
-- userChrome_fixed_color
-  - grey colored UI elements (background, url/nav-bar, sidebar)
-    - sidebar needs changes in `sideberry.css` -> `--frame-bg: <your_color_here> !important; /* this is the sidebar background color */`
-  - auto hiding top bar
-    - does not auto show, needs to be opened with a shortcut
-- userChrome_fixed_color_hiding
-  - `userChrome_fixed_color`, but the sidebar is now fully hidden
-
-### I want to move the sidebar to the right
-
-Steps:
+## Sidebery
+How to change the location of Sidebery
 
 1. Change this:
    ```css
@@ -82,7 +42,3 @@ Steps:
    <div style="text-align: center;">
        <img src="res/move_sidebery.png" alt="Move Sidebery Sidebar">
    </div>
-
-### There are issues with the sidebar
-
-If you have issues where the theme does not look like in the video (except the color), make sure to fully disable the built-in sidebar in Firefox.
