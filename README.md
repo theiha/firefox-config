@@ -6,7 +6,7 @@
 
 1. In `about:profiles`, open the active profile's **Root Directory**.
 2. In `about:config`, enable `toolkit.legacyUserProfileCustomizations.stylesheets`.
-3. Copy `chrome/userChrome_fixed_color_hiding.css` to `<profile>/chrome/userChrome.css`.
+3. Copy `userChrome.css` to `<profile>/chrome/userChrome.css`.
 4. Install [Sidebery](https://addons.mozilla.org/firefox/addon/sidebery/).
 5. Paste `sideberry.css` into Sidebery's Styles editor. Set `--frame-bg` to `#2b2b2b`.
 6. Restart Firefox.
