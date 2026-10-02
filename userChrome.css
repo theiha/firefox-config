@@ -5,6 +5,12 @@
     --navbar-color: var(--background-color);
     --field-color: #242424;
     --text-color: #e0e0e0;
+    /* Central monochrome UI icons; keep native disabled opacity and status colors. */
+    --icon-color: #ffffff !important;
+    --icon-color-secondary: var(--icon-color) !important;
+    --toolbar-color: var(--icon-color) !important;
+    --toolbarbutton-icon-fill: var(--icon-color) !important;
+    --lwt-toolbarbutton-icon-fill: var(--icon-color) !important;
     --toolbar-field-text-color: var(--text-color) !important;
     --toolbar-field-text-color-focus: var(--text-color) !important;
     --toolbar-field-color: var(--text-color) !important;
