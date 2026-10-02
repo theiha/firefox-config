@@ -1,8 +1,57 @@
 /* --- GLOBAL VARIABLES --- */
 :root {
-    --background-color: #2b2a33;
-    --new-bg-color: #2b2b2b;
-    --navbar-color: #3b3f52;
+    --background-color: #2b2b2b;
+    --new-bg-color: var(--background-color);
+    --navbar-color: var(--background-color);
+    --field-color: #242424;
+    --text-color: #e0e0e0;
+    --toolbar-field-text-color: var(--text-color) !important;
+    --toolbar-field-text-color-focus: var(--text-color) !important;
+    --toolbar-field-color: var(--text-color) !important;
+    --toolbar-field-focus-color: var(--text-color) !important;
+    --toolbar-text-color: var(--text-color) !important;
+    --toolbox-text-color: var(--text-color) !important;
+    --toolbox-text-color-inactive: var(--text-color) !important;
+    --lwt-text-color: var(--text-color) !important;
+    --panel-text-color: var(--text-color) !important;
+    --arrowpanel-color: var(--text-color) !important;
+    --urlbarView-url-color: #b0b0b0 !important;
+    --urlbarView-action-color: #b0b0b0 !important;
+    --urlbarview-text-color-action: #b0b0b0 !important;
+    --urlbar-box-text-color: var(--text-color) !important;
+    --urlbar-box-text-color-hover: var(--text-color) !important;
+    --urlbar-box-text-color-active: var(--text-color) !important;
+    --toolbox-background-color: var(--background-color) !important;
+    --toolbox-background-color-inactive: var(--background-color) !important;
+    --toolbar-background-color: var(--background-color) !important;
+    --toolbar-field-background-color: var(--field-color) !important;
+    --toolbar-field-background-color-focus: var(--field-color) !important;
+    --urlbar-background-color: var(--field-color) !important;
+    --urlbar-background-color-focus: var(--field-color) !important;
+    --tabpanel-background-color: var(--background-color) !important;
+    --sidebar-background-color: var(--background-color) !important;
+    --lwt-accent-color: var(--background-color) !important;
+    --lwt-accent-color-inactive: var(--background-color) !important;
+    --toolbar-bgcolor: var(--background-color) !important;
+    --toolbar-field-background: var(--field-color) !important;
+    --toolbar-field-focus-background: var(--field-color) !important;
+    --panel-background-color: var(--background-color) !important;
+    --popup-background-color: var(--background-color) !important;
+    --arrowpanel-background: var(--background-color) !important;
+    --button-background-color: #333333 !important;
+    --button-background-color-hover: #383838 !important;
+    --button-background-color-active: #444444 !important;
+    --toolbarbutton-hover-background: #383838 !important;
+    --toolbarbutton-active-background: #444444 !important;
+    --toolbarbutton-background-color-hover: #383838 !important;
+    --toolbarbutton-background-color-active: #444444 !important;
+    --urlbar-box-background-color: #333333 !important;
+    --urlbar-box-background-color-focus: #333333 !important;
+    --urlbar-box-background-color-hover: #383838 !important;
+    --urlbar-box-background-color-active: #444444 !important;
+    --color-accent-primary: #a0a0a0 !important;
+    --color-accent-primary-hover: #b0b0b0 !important;
+    --color-accent-primary-active: #909090 !important;
     --navbar-height: 42px;
     --sidebar-collapsed-width: 35px;
     --sidebar-expanded-width: 200px;
@@ -12,9 +61,9 @@
 /* --- AUTOHIDE NAVIGATION BAR --- */
 #navigator-toolbox {
     position: relative !important;
-    /* Keep it in the document flow */
     z-index: 10;
-    /* move the sidebar off-screen */
+    border: none !important;
+    padding: 0 !important;
     margin-top: calc(-1 * (var(--navbar-height))) !important;
     transition: margin-top 150ms ease-out !important;
 }
@@ -25,21 +74,51 @@
     margin-top: 0 !important;
 }
 
-/* round corners of the main browser content */
+/* Content inset */
 #tabbrowser-tabpanels .browserContainer,
 #tabbrowser-tabpanels>.deck-selected>.browserContainer {
     border-radius: 10px !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
     overflow: hidden !important;
-    margin: 10px 10px 10px 10px !important;
+    margin: 10px !important;
 }
 
-/* Style for the main content area of the browser */
+/* Window frame */
+:root,
+body,
+#navigator-toolbox,
+#browser,
 #appcontent,
-#tabbrowser-tabpanels {
+#tabbrowser-tabbox,
+#tabbrowser-tabpanels,
+#tabbrowser-tabpanels .browserContainer,
+#sidebar-box,
+#sidebar {
     background: var(--new-bg-color) !important;
 }
 
-/* Hide various UI elements for a cleaner look */
+#browser,
+#appcontent,
+#tabbrowser-tabbox,
+#tabbrowser-tabpanels,
+#sidebar-box,
+#sidebar {
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+}
+
+#sidebar-box,
+#sidebar {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Hidden controls */
 #titlebar,
 .titlebar-buttonbox-container,
 #TabsToolbar,
@@ -57,13 +136,40 @@
     background-color: var(--new-bg-color) !important;
     box-shadow: none !important;
     border: none !important;
+    box-sizing: border-box !important;
+    height: var(--navbar-height) !important;
     min-height: var(--navbar-height) !important;
+    max-height: var(--navbar-height) !important;
+    padding-block: 0 !important;
 }
 
-#urlbar-background {
-    background-color: var(--new-bg-color) !important;
+#urlbar-background,
+.urlbar-background,
+#searchbar {
+    background-color: var(--field-color) !important;
     border-radius: 4px !important;
     border: none !important;
+}
+
+.urlbar-input,
+.searchbar-textbox {
+    color: var(--text-color) !important;
+}
+
+.urlbar-input::placeholder,
+.searchbar-textbox::placeholder {
+    color: #a0a0a0 !important;
+    opacity: 1 !important;
+}
+
+/* Menus and pickers */
+panel,
+menupopup {
+    --panel-background-color: var(--background-color) !important;
+    --panel-text-color: var(--text-color) !important;
+    --panel-border-color: #444444 !important;
+    --panel-item-hover-bgcolor: #383838 !important;
+    --panel-item-active-bgcolor: #444444 !important;
 }
 
 /* --- SIDEBAR CUSTOMIZATION --- */
@@ -103,11 +209,9 @@
     width: var(--sidebar-expanded-width) !important;
 }
 
-/* Style for sidebar splitter */
+/* No sidebar gutter */
 #sidebar-splitter {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+    display: none !important;
 }
 
 /* Remove rounded corners when video/content is in fullscreen */
